@@ -9,9 +9,7 @@ function AllocationsHandler(db) {
     this.displayAllocations = function(req, res, next) {
 
         var userId = parseInt(req.params.userId);
-        /* Fix for A4 Insecure DOR -  take user id from session instead of from URL param
-         var userId = parseInt(req.session.userId);
-         */
+
 
         if (isNaN(userId)) {
             return next(new Error("Invalid allocations id"));
